@@ -1,3 +1,9 @@
 .logoNavbar {
-    width: 80px;
+    width: 50px;
+}
+.navbarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
 }
