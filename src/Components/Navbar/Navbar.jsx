@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import logo from '/logo.jpeg'
 import './Navbar.css'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 
@@ -23,7 +24,7 @@ function Navbar() {
   }, []);
 
   const secciones = [
-    { nombre: 'INICIO', id: 'home', className: 'notBorderHome' },
+    { nombre: 'INICIO', id: '', className: 'notBorderHome' },
     { nombre: 'NOSOTROS', id: 'about', className: ''},
     { nombre: 'SERVICIOS', id: 'service', className: 'servicioNavbar'},
     { nombre: 'CONTACTO', id: 'contact', className: ''}
@@ -58,9 +59,9 @@ function Navbar() {
 
   const navbar = (<div className='dropdown'>
     {secciones.map((seccion) => (
-    <p className={` ${seccion.className} ${seccion.id === activeSection ? 'active' : ''}`} key={seccion.id} onClick={() => handleClick(seccion.id)}  >
+    <Link to={seccion.id} className={` ${seccion.className} ${seccion.id === activeSection ? 'active' : ''}`} key={seccion.id} onClick={() => handleClick(seccion.id)}  >
       {seccion.nombre}
-    </p>
+    </Link>
   ))}
   </div>)
 
